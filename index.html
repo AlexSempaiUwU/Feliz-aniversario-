@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mi niña Briyeth 💖</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #5a0066, #8e00a8);
+      color: white;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin: 30px 10px 10px;
+      text-shadow: 0 0 15px #ff7ad9;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 10px 10px 20px;
+      opacity: 0.9;
+    }
+
+    /* GALERÍA */
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 0 5px 30px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .galeria img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+
+    /* BOTÓN CARTA CON CORAZÓN */
+    .carta-boton {
+      width: 200px;
+      height: 200px;
+      margin: 50px auto 40px;
+      background: linear-gradient(135deg, #ff5ca8, #c94b4b);
+      border: 10px solid #fff;
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carta-boton:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 20px 50px rgba(255,92,168,0.7);
+    }
+
+    .corazon {
+      font-size: 6rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(255,255,255,0.8);
+    }
+
+    .texto-boton {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 10px #ff7ad9;
+      letter-spacing: 1px;
+    }
+
+    /* CONTENIDO DE LA CARTA */
+    #carta-contenido {
+      background: rgba(0,0,0,0.4);
+      margin: 20px 10px;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 95%;
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    #carta-contenido.abierto {
+      display: block;
+      opacity: 1;
+    }
+
+    #carta-contenido h2 {
+      margin-top: 0;
+      color: #ff7ad9;
+      text-shadow: 0 0 10px #ff7ad9;
+    }
+
+    /* POEMA */
+    .poema {
+      background: rgba(0,0,0,0.3);
+      margin: 30px 10px;
+      padding: 25px;
+      border-radius: 20px;
+      max-width: 95%;
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* BOTÓN MÚSICA */
+    #botonMusica {
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      background: #ff5ca8;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ff5ca8;
+      margin: 25px auto;
+      display: block;
+      transition: all 0.3s;
+    }
+
+    #botonMusica:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px #ff5ca8;
+    }
+
+    /* KUROMIS */
+    .kuromi {
+      position: fixed;
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: -2;
+      user-select: none;
+      animation: screensaver linear infinite;
+    }
+
+    @keyframes screensaver {
+      0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
+      25%  { transform: translate(35vw, -25vh) rotate(18deg) scale(1.15); }
+      50%  { transform: translate(-25vw, 15vh) rotate(-12deg) scale(0.85); }
+      75%  { transform: translate(45vw, -35vh) rotate(22deg) scale(1.1); }
+      100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    }
+
+    #musica { display: none; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.4rem; margin: 25px 5px 5px; }
+      h2 { font-size: 1.4rem; }
+      .galeria { gap: 10px; padding: 0 5px 30px; }
+      .galeria img { width: 100%; max-width: none; }
+      .carta-boton { width: 160px; height: 160px; margin: 40px auto 30px; }
+      .corazon { font-size: 5rem; margin-bottom: 8px; }
+      .texto-boton { font-size: 1.2rem; }
+      .poema, #carta-contenido { margin: 15px 8px; padding: 20px; width: 96%; }
+      #botonMusica { width: 80%; max-width: 300px; }
+      .kuromi { width: 45px !important; opacity: 0.45; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>💖 Mi niña Briyeth 💖</h1>
+  <h2>Mi todo todito 🥺👉👈</h2>
+
+  <button id="botonMusica">💜 Reproducir música 💜</button>
+
+  <div class="galeria">
+    <img src="IMG-20250307-WA0011_084048.jpg">
+    <img src="IMG-20250330-WA0007_084255.jpg">
+    <img src="IMG-20250511-WA0012_084710.jpg">
+    <img src="IMG-20260106-WA0063.jpg">
+
+    <!-- BOTÓN CARTA CON CORAZÓN -->
+    <div class="carta-boton" id="abrirCarta">
+      <div class="corazon">❤️</div>
+      <div class="texto-boton">Un año juntos ✨</div>
+    </div>
+
+    <img src="IMG_20250920_204046.jpg">
+    <img src="Picsart_25-05-11_20-33-54-756_084721.jpg">
+    <img src="d0da90ff0fb9981ead537b3e59490fda_084052.jpg">
+  </div>
+
+  <!-- CONTENIDO DE LA CARTA -->
+  <div id="carta-contenido">
+    <h2>💖 Gracias por estar conmigo todo un año mi amor 💖</h2>
+    <p>
+      ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨<br><br>
+      Un día como hoy hace un año nació una maravillosa relación entre tú y yo y que a pesar de las pruebas superadas quiero que sepas que te amo mucho como la primera vez en la que nos conocimos, agradecido por tu comprensión, compañía y por darme pruebas de que mi vida cambió a un mejor lugar contigo... <br><br>
+      ✨🥹❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️<br><br>
+      Encantado por tu sonrisa, por tu personalidad dominante que me hace sentir seguro. Quiero que sepas que sueño en casarme y que seas la primera y última mujer y persona especial en mi vida. Mi amor, eres todo lo que un día soñé. Admito que me has hecho afortunado de tenerte a mi lado y juro que de tu lado no me separaré. Estaremos en los momentos buenos y malos, incluso peores ✨🥹 como en las cartas que me escribiste que atesoro 🥰<br><br>
+      Te amo con todo mi corazón, siempre estaré para ti y que pronto estemos juntos por siempre ♾️ y para siempre ♾️ tú y yo corazón ❤️<br><br>
+      ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+    </p>
+  </div>
+
+  <div class="poema">
+    <p>
+      Tus ojos, dos luceros brillantes, que iluminan mis días y noches errantes.<br><br>
+      Como el cielo nocturno, oscuros y profundos, me pierdo en ellos, sin ningún rumbo.<br><br>
+      Me enamoran sus destellos, su luz divina, y en ellos me pierdo, sin medicina.<br><br>
+      Son tus ojos, mi guía, mi norte y mi sur, mi razón de ser, mi amor, mi único y puro.<br><br>
+      Me hacen soñar, me hacen volar, y en ellos encuentro, mi hogar.
+    </p>
+  </div>
+
+  <video id="musica" loop muted playsinline preload="auto">
+    <source src="Musicapop.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    // Música
+    const botonMusica = document.getElementById("botonMusica");
+    const video = document.getElementById("musica");
+    let reproduciendo = false;
+
+    botonMusica.addEventListener("click", () => {
+      if (reproduciendo) {
+        video.pause();
+        botonMusica.innerHTML = "💜 Reproducir música 💜";
+      } else {
+        video.muted = false;
+        video.volume = 0.4;
+        video.play().catch(err => console.log("Error:", err));
+        botonMusica.innerHTML = "💖 Pausar música 💖";
+      }
+      reproduciendo = !reproduciendo;
+    });
+
+    // Abrir/Cerrar carta
+    const botonCarta = document.getElementById("abrirCarta");
+    const contenidoCarta = document.getElementById("carta-contenido");
+
+    botonCarta.addEventListener("click", () => {
+      contenidoCarta.classList.toggle("abierto");
+      if (contenidoCarta.classList.contains("abierto")) {
+        contenidoCarta.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+
+    // Kuromis
+    const numKuromis = 15;
+    for (let i = 0; i < numKuromis; i++) {
+      let img = document.createElement("img");
+      img.src = "imagenkuromy.png";
+      img.className = "kuromi";
+
+      img.style.left = Math.random() * 100 + "vw";
+      img.style.top  = Math.random() * 100 + "vh";
+
+      const duration = 25 + Math.random() * 35;
+      img.style.animationDuration = duration + "s";
+      img.style.animationDelay = (Math.random() * -duration) + "s";
+
+      const size = 40 + Math.random() * 35;
+      img.style.width = size + "px";
+      img.style.opacity = 0.35 + Math.random() * 0.45;
+
+      document.body.appendChild(img);
+    }
+  </script>
+
+</body>
+</html>
