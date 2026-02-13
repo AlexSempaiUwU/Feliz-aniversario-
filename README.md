@@ -1,2 +1,2 @@
 # Feliz-aniversario-
-Te amo cariñito 🥺💖
+Te amo cariño 🥺💖
