@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Para Briyeth 💖</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffc3a0);
+  background-size: 400% 400%;
+  animation: fondo 8s ease infinite;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  font-family: 'Arial', sans-serif;
+  text-align:center;
+  overflow:hidden;
+  color:white;
+}
+
+@keyframes fondo{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+button{
+  padding:15px 30px;
+  font-size:20px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#ff4d6d;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+.hidden{
+  display:none;
+}
+
+.nombre{
+  font-size:45px;
+  font-weight:bold;
+  background: linear-gradient(90deg, #fff, #ffe6f0, #fff);
+  background-size:200%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation: brillo 3s linear infinite, latido 2s ease-in-out infinite;
+}
+
+@keyframes brillo{
+  0%{ background-position:0%; }
+  100%{ background-position:200%; }
+}
+
+@keyframes latido{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.1); }
+}
+
+.corazon{
+  position:absolute;
+  font-size:20px;
+  animation: flotar 6s linear infinite;
+}
+
+@keyframes flotar{
+  0%{ transform:translateY(0); opacity:1; }
+  100%{ transform:translateY(-900px); opacity:0; }
+}
+</style>
+
+</head>
+<body>
+
+<div id="inicio">
+  <button onclick="mostrar()">Haz click si quieres ver cuánto te amo 💌</button>
+</div>
+
+<div id="mensaje" class="hidden">
+  <div class="nombre">Briyeth 💖</div>
+  <h2>
+    Desde que llegaste a mi vida, todo es más bonito 🥺✨<br><br>
+    Eres mi alegría, mi calma y mi persona favorita 💞<br><br>
+    Te amo infinito ♾️❤️
+  </h2>
+</div>
+
+<audio id="musica" loop>
+  <source src="TU_CANCION.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function mostrar(){
+  document.getElementById("inicio").classList.add("hidden");
+  document.getElementById("mensaje").classList.remove("hidden");
+  document.getElementById("musica").play();
+  crearCorazones();
+}
+
+function crearCorazones(){
+  setInterval(() => {
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "💖";
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+      corazon.remove();
+    }, 6000);
+  }, 300);
+}
+</script>
+
+</body>
+</html>
