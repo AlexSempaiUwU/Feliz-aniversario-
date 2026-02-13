@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mi niña Briyeth 💖</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background: linear-gradient(135deg,#5a0066,#8e00a8);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* TITULO */
+h1{
+    font-size:32px;
+    margin-top:30px;
+    text-shadow:0 0 15px #ff7ad9;
+}
+
+h2{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+/* GALERIA */
+.galeria{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    padding:10px;
+}
+
+.galeria img{
+    width:42%;
+    max-width:320px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+/* POEMA */
+.poema{
+    background:rgba(0,0,0,0.25);
+    margin:30px 20px;
+    padding:20px;
+    border-radius:20px;
+}
+
+/* CARTA */
+.carta{
+    background:rgba(255,255,255,0.1);
+    margin:30px 20px 60px;
+    padding:20px;
+    border-radius:20px;
+}
+
+/* BOTON MUSICA */
+#botonMusica{
+    padding:12px 25px;
+    font-size:16px;
+    border:none;
+    border-radius:25px;
+    background:#ff5ca8;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 15px #ff5ca8;
+    margin-bottom:25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>💖 Mi niña Briyeth 💖</h1>
+<h2>Mi todo todito 🥺👉👈</h2>
+
+<button id="botonMusica">💜 Reproducir música 💜</button>
+
+<video id="musica" loop>
+<source src="Musicapop.mp4" type="video/mp4">
+</video>
+
+<div class="galeria">
+
+<img src="IMG-20250307-WA0011_084048.jpg">
+<img src="IMG-20250330-WA0007_084255.jpg">
+<img src="IMG-20250511-WA0012_084710.jpg">
+<img src="IMG-20260106-WA0063.jpg">
+<img src="IMG_20250920_204046.jpg">
+<img src="Picsart_25-05-11_20-33-54-756_084721.jpg">
+<img src="d0da90ff0fb9981ead537b3e59490fda_084052.jpg">
+
+</div>
+
+<div class="poema">
+<p>
+Tus ojos, dos luceros brillantes, que iluminan mis días y noches errantes.
+Como el cielo nocturno, oscuros y profundos, me pierdo en ellos, sin ningún rumbo.<br><br>
+
+Me enamoran sus destellos, su luz divina, y en ellos me pierdo, sin medicina.<br><br>
+
+Son tus ojos, mi guía, mi norte y mi sur, mi razón de ser, mi amor, mi único y puro.
+Me hacen soñar, me hacen volar, y en ellos encuentro, mi hogar.
+</p>
+</div>
+
+<div class="carta">
+
+<h2>💖 gracias por estar conmigo todo un año mi amor 💖</h2>
+
+<p>
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨<br><br>
+
+Un día como hoy hace un año nació una maravillosa relación entre tú y yo y que a pesar de las pruebas superadas quiero que sepas que te amo mucho como la primera vez en la que nos conocimos, agradecido por tu comprensión, compañía y por darme pruebas de que mi vida cambió a un mejor lugar contigo... <br><br>
+
+✨🥹❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️<br><br>
+
+Encantado por tu sonrisa, por tu personalidad dominante que me hace sentir seguro. Quiero que sepas que sueño en casarme y que seas la primera y última mujer y persona especial en mi vida. Mi amor, eres todo lo que un día soñé. Admito que me has hecho afortunado de tenerte a mi lado y juro que de tu lado no me separaré. Estaremos en los momentos buenos y malos, incluso peores ✨🥹 como en las cartas que me escribiste que atesoro 🥰<br><br>
+
+Te amo con todo mi corazón, siempre estaré para ti y que pronto estemos juntos por siempre ♾️ y para siempre ♾️ tú y yo corazón ❤️<br><br>
+
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+</p>
+
+</div>
+
+<script>
+
+/* BOTON MUSICA */
+const boton = document.getElementById("botonMusica");
+const video = document.getElementById("musica");
+
+boton.addEventListener("click", function(){
+video.volume = 0.6;
+video.play();
+boton.innerHTML = "💖 Música activada 💖";
+});
+
+/* KUROMIS FLOTANTES */
+for(let i=0;i<8;i++){
+let img=document.createElement("img");
+img.src="imagenkuromy.png";
+img.style.position="fixed";
+img.style.width="70px";
+img.style.left=Math.random()*100+"vw";
+img.style.top=Math.random()*100+"vh";
+img.style.opacity="0.8";
+img.style.zIndex="0";
+document.body.appendChild(img);
+}
+
+</script>
+
+</body>
+</html>
